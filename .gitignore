@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Flask instance folder
+instance/
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Compiled static files
+*.sass-cache
+*.cache
+*.pyo
+
+# Environment variables
+.env
+*.env
+
+# Uploaded files
+uploads/
+media/
+
+# Python egg
+*.egg-info/
+dist/
+build/
+
+# Node (if front-end exists)
+node_modules/
