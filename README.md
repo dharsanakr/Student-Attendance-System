@@ -1,100 +1,99 @@
-# ⚡ Replica — Clone Website Detection System  
-A machine-learning based clone & phishing website detection system that analyzes URLs and identifies whether a website is **legitimate** or **malicious**.  
-Built using **Python, Flask API, XGBoost**, and integrated with a **browser extension** for real-time detection.
+# 📘 Student Attendance WebApp  
+A lightweight and user-friendly **attendance management system** built using **Python, Flask, HTML, CSS, and JavaScript**.  
+This project allows teachers/admins to add students, mark attendance, and track daily records easily.
 
 ---
 
 ## 📌 Overview  
-Replica is a clone website detection tool that works by analyzing URL patterns and predicting if the received link is suspicious.  
-The backend model classifies every incoming URL as:
+The **Student Attendance WebApp** helps manage attendance digitally with a clean interface and simple workflow.  
+Users can:
 
-- 🟢 **Legitimate Website**  
-- 🔴 **Fake / Clone / Phishing Website**
+- 🧑‍🎓 **Add Student Details**  
+- 🟢 **Mark Present** / 🔴 **Mark Absent**  
+- 📅 **View Attendance Records**  
+- 💾 **Store Records Securely in Database**
 
-If a website is detected as fake, the system **automatically redirects the user to the real website**.
-
-Replica does **not** allow manual URL entry — it detects URLs automatically through user interaction and browser extension monitoring.
+The system aims to replace manual attendance sheets with a digital solution.
 
 ---
 
 ## 🚀 Features  
 
-### 🔍 Automatic URL Detection  
-The browser extension captures and sends URLs automatically whenever the user visits a website.
+### 📝 Add & Manage Students  
+Add new students with their details and maintain an updated student list.
 
-### 🧠 Machine Learning Detection (XGBoost Based)  
-Replica uses an **XGBoost classifier** trained on phishing + legitimate URLs  
-*(not AI-powered — purely ML-based)*.
+### 🔔 Attendance Marking System  
+Mark daily attendance with a simple and clean UI:
+- 🟢 Present  
+- 🔴 Absent  
 
-### 🛡 Real-Time Classification  
-Flask API instantly returns:  
-- `legitimate`  
-- `malicious`  
+### 📊 Attendance Records  
+View all attendance logs date-wise or student-wise.
 
-### 🔗 Auto-Redirect System  
-When a URL is flagged as malicious, Replica redirects the user to the safe website.
+### 💾 Database Support  
+The backend supports:  
+- **MongoDB**, or  
+- **SQLite / MySQL**  
+(whichever you used in your project)
 
-### 📝 Pop-Up Notification  
-The browser extension displays:  
-- 🟢 *This is a real website*  
-- 🔴 *Fake website — redirecting to real site*  
-
-### 💾 Dataset Used  
-- `malicious_phish.csv`  
-- `legitimate-urls.csv`  
+### 🌐 Clean Frontend UI  
+Built using **HTML, CSS, JavaScript** with responsive layout.
 
 ---
 
 ## 🏗️ Project Structure  
 
-Replica/
-│── app.py # Flask backend API
-│── model/
-│ └── xgboost_model.pkl # Trained XGBoost model
-│── extension/ # Browser extension files
-│ ├── manifest.json
-│ ├── popup.html
-│ ├── popup.js
-│ ├── background.js
-│── static/
+Student-Attendance-WebApp/
+│── app.py # Flask backend
 │── templates/
-│── datasets/
-│ ├── malicious_phish.csv
-│ ├── legitimate-urls.csv
+│ ├── index.html # Home page
+│ ├── add_student.html # Student entry page
+│ ├── attendance.html # Mark attendance page
+│ └── records.html # View attendance logs
+│── static/
+│ ├── css/
+│ ├── js/
+│ └── images/
+│── database/ # MongoDB or SQLite data
+│── requirements.txt
+│── .gitignore
 │── README.md
 
 ---
 
 ## ⚙️ Technologies Used  
 
-- **Python**
-- **Flask (REST API)**
-- **XGBoost (Machine Learning)**
-- **HTML, CSS, JavaScript** (Browser Extension)
-- **MongoDB** (optional user tracking)
+- **Python**  
+- **Flask**  
+- **HTML, CSS, JavaScript**  
+- **MongoDB / SQLite / MySQL** (as backend database)
 
 ---
 
-## 🔌 How Replica Works  
+## 🔌 How the System Works  
 
-### **1️⃣ Browser Extension Monitors URLs**
-Automatically sends visited URLs to the backend.
+### **1️⃣ Add Students**
+Teacher/admin enters student details such as:
+- Name  
+- Roll Number  
+- Class / Section  
 
-### **2️⃣ Flask Extracts Features**
-Examples:
-- URL length  
-- Number of dots  
-- Hyphens  
-- Suspicious keywords  
-- Use of IP address  
+### **2️⃣ Mark Attendance**
+Daily attendance is marked manually using the web interface:
+- 🟢 Present  
+- 🔴 Absent  
 
-### **3️⃣ Model Predicts Using XGBoost**
-Returns:
-- `0` → Legitimate  
-- `1` → Malicious / Clone / Phishing  
+### **3️⃣ Records Stored in DB**
+Attendance is saved in the database with:
+- Timestamp  
+- Student ID  
+- Attendance status  
 
-### **4️⃣ Notification + Auto Redirect**
-If malicious → user is redirected to the safe legitimate site.
+### **4️⃣ View Attendance**
+Admin can view:
+- Daily attendance  
+- Individual student records  
+- History of attendance  
 
 ---
 
@@ -104,18 +103,21 @@ If malicious → user is redirected to the safe legitimate site.
 pip install -r requirements.txt
 
 
-### **Step 2 — Start the Flask Server**
+### **Step 2 — Run Flask Server**
+python app.py
 
-### **Step 3 — Add Browser Extension**
-Chrome → Extensions → Turn on **Developer Mode** →  
-**Load Unpacked** → Select the `extension/` folder.
+
+### **Step 3 — Open Browser**
+Go to:
+
+
+http://127.0.0.1:5000
 
 ---
 
-## 👨‍💻 Developer  
+## 👩‍💻 Developer  
 **Dharsana K R**  
-Full Stack Developer | Cybersecurity Enthusiast
+Full Stack Developer | Cybersecurity Enthusiast  
 
 ---
-
 
