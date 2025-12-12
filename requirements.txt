@@ -1,0 +1,12 @@
+Flask
+Flask-Cors
+Flask-Login
+Flask-WTF
+Werkzeug
+gunicorn
+requests
+pymongo
+python-dotenv
+Jinja2
+itsdangerous
+MarkupSafe
